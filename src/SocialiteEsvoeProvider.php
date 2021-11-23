@@ -1,6 +1,6 @@
 <?php
 
-namespace zerobyted\SocialiteEsvoe;
+namespace ZeroByteD\SocialiteEsvoe;
 
 use Laravel\Socialite\Two\User;
 use GuzzleHttp\Exception\GuzzleException;
@@ -25,7 +25,7 @@ class SocialiteEsvoeProvider extends AbstractProvider
     /**
      * @return string
      */
-    public function getCognitoUrl()
+    public function getEsvoeUrl()
     {
         return config('services.esvoe.base_uri') . '/oauth2';
     }
@@ -37,7 +37,7 @@ class SocialiteEsvoeProvider extends AbstractProvider
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase($this->getCognitoUrl() . '/authorize', $state);
+        return $this->buildAuthUrlFromBase($this->getEsvoeUrl() . '/authorize', $state);
     }
 
     /**
@@ -45,7 +45,7 @@ class SocialiteEsvoeProvider extends AbstractProvider
      */
     protected function getTokenUrl()
     {
-        return $this->getCognitoUrl() . '/token';
+        return $this->getEsvoeUrl() . '/token';
     }
 
     /**
@@ -57,7 +57,7 @@ class SocialiteEsvoeProvider extends AbstractProvider
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->post($this->getCognitoUrl() . '/userInfo', [
+        $response = $this->getHttpClient()->post($this->getEsvoeUrl() . '/userInfo', [
             'headers' => [
                 'cache-control' => 'no-cache',
                 'Authorization' => 'Bearer ' . $token,

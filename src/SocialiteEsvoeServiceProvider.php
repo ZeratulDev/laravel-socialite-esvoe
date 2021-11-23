@@ -1,6 +1,6 @@
 <?php
 
-namespace zerobyted\SocialiteEsvoe;
+namespace ZeroByteD\SocialiteEsvoe;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Socialite\Contracts\Factory;
