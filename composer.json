@@ -1,0 +1,27 @@
+{
+    "name": "zerobyted/laravel-socialite-esvoe",
+    "description": "Socialite driver",
+    "type": "extension",
+    "authors": [
+        {
+            "name": "ZeroByte",
+            "email": "daggerke@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ZeroByteD\\SocialiteEsvoe\\": "src"
+        }
+    },
+    "require": {
+        "php": "^7.3",
+        "laravel/socialite": "^5.2"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ZeroByteD\\SocialiteEsvoe\\SocialiteEsvoeServiceProvider"
+            ]
+        }
+    }
+}
